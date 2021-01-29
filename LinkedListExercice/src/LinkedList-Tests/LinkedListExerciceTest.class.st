@@ -63,7 +63,7 @@ LinkedListExerciceTest >> testIsEmpty [
 ]
 
 { #category : #tests }
-LinkedListExerciceTest >> testRemoveIemElement [
+LinkedListExerciceTest >> testRemoveIemeElement [
 	
 	| linkedList deletedNode newOrder |
 	linkedList := LinkedListExercice new. 
