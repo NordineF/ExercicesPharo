@@ -52,6 +52,32 @@ LinkedListExerciceTest >> testInsertAfterHead [
 ]
 
 { #category : #tests }
+LinkedListExerciceTest >> testInsertAtData [
+	
+	| linkedList insertNode pastNode |
+	linkedList := LinkedListExercice new. 
+	linkedList insert: 1. 
+	linkedList insert: 2. 
+	linkedList insert: 3.
+	linkedList insert: 4.
+	linkedList insert: 5.  
+	linkedList insert: 6. 
+	linkedList insert: 7. 
+	linkedList insert: 8. 
+	linkedList insert: 9. 
+	linkedList insert: 10. 
+	pastNode := linkedList getIemeElement: 6. 
+	self assert: pastNode data equals:6.
+	linkedList insertAt: 6 data: 15.
+	insertNode := linkedList getIemeElement:6.
+	self assert: insertNode data equals:15.
+	pastNode := linkedList getIemeElement: 7. 
+	self assert: pastNode data equals:6.
+	self assert: linkedList size equals:11.
+	
+]
+
+{ #category : #tests }
 LinkedListExerciceTest >> testIsEmpty [
 	
 	| linkedList |
