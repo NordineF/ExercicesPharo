@@ -1,0 +1,2 @@
+# ExercicesPharo
+Exercices pour PJI
