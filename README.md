@@ -68,5 +68,5 @@ docForGenerateDoc generateDocumentation: GenerateDoc.
 
 |docForLinkedListExercice|
 docForLinkedListExercice:= GenerateDoc aClass: LinkedListExercice.
-tdocForLinkedListExercice generateDocumentation.
+docForLinkedListExercice generateDocumentation.
 ```
