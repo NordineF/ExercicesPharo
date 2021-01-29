@@ -1,32 +1,20 @@
 "
-I create a directory with the name given in argument, in the directory.
+I create a file in the directory /home/{userName}/Pharo_Documentation/{ClassName}/{ClassName}_doc.txt with the className given in argument.
 The result directory is ""Pharo_Documentation/{class_name}""
 
 
-I return true if the directory is created, otherwise raise an exception otherwise.
-Please comment me using the following template inspired by Class Responsibility Collaborator (CRC) design:
 
-For the Class part:  State a one line summary. For example, ""I represent a paragraph of text"".
+example:
 
-For the Responsibility part: Three sentences about my main responsibilities - what I do, what I know.
+|docForGenerateDoc|
+docForGenerateDoc:= GenerateDoc new.
+docForGenerateDoc generateDocumentation: GenerateDoc.
 
-For the Collaborators Part: State my main collaborators and one line about how I interact with them. 
-
-Public API and Key Messages
-
-- message one   
-- message two 
-- (for bonus points) how to create instances.
-
-   One simple example is simply gorgeous.
- 
-Internal Representation and Key Implementation Points.
-
-    Instance Variables
-	classInstance:		<Object>
+|docForLinkedListExercice|
+docForLinkedListExercice:= GenerateDoc aClass: LinkedListExercice.
+docForLinkedListExercice generateDocumentation.
 
 
-    Implementation Points
 "
 Class {
 	#name : #GenerateDoc,
