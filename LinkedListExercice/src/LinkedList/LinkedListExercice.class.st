@@ -60,13 +60,12 @@ LinkedListExercice >> getIemeElement: anInteger [
 "
 	| iemeNode ieme |
 	anInteger isInteger ifFalse:[ NonIntegerException signal: NonIntegerException message argument: anInteger ].
-	anInteger >= 0 ifFalse:[  IsNegativeException  signal: IsNegativeException message argument: anInteger ]. 
+	anInteger > 0 ifFalse:[  IsNegativeException  signal: IsNegativeException message argument: anInteger ]. 
 	self isEmpty ifTrue:[ EmptyException  signal: EmptyException message  argument: size ].
 	"  -2 for the to: do: in the ifTrue"
 	ieme:= anInteger - 2.
 	iemeNode := head. 
 	anInteger <= size ifTrue: [ 
-		" If user give 0 then ieme:= -2 but we have assigned head to iemeNode so if the user enter 0 or 1 we give him the head data"
 		0 to: ieme do:[  :x | iemeNode:= iemeNode next ].
 		^ iemeNode. 
 	] ifFalse: [ IndexOutOfBoundsException  signal: IndexOutOfBoundsException message  argument: anInteger ] 
@@ -116,6 +115,48 @@ LinkedListExercice >> insert: aData [
 	size := size +1 . 
 	
 
+]
+
+{ #category : #accessing }
+LinkedListExercice >> insertAt: anInteger data: aData [
+"		Insert a Node with data at the anInteger position 
+	 	in the LinkedList
+	  
+		@param:
+		anInteger                          the position of the ieme element.
+		aData                              the new node data.
+				
+		@throws:
+		EmptyException                     if the LinkedList is empty. 
+		IsNegativeException                if anInteger is negative or equal to 0
+		NonIntingerException               if anInteger is not an integer. 
+		IndexOutOfBoundsException          can be raise by getIemeElement self function. 
+		
+		@return:
+		iemeNode                           the Node present at the anInteger position in the LinkedList
+"
+	| iemeNode ieme newNode tmpNode |
+	anInteger isInteger ifFalse:[ NonIntegerException signal: NonIntegerException message argument: anInteger ].
+	anInteger > 0 ifFalse:[  IsNegativeException  signal: IsNegativeException message argument: anInteger ]. 
+	self isEmpty ifTrue:[ EmptyException  signal: EmptyException message  argument: size ].
+	"  -2 for the to: do: in the ifTrue"
+	ieme:= anInteger - 3.
+	newNode := Node data: aData.
+	iemeNode := head. 
+	ieme = 1 ifTrue:[
+		tmpNode:= head.
+		head:=newNode.
+		head next: tmpNode. 
+		^ head. 
+	].
+	anInteger <= size ifTrue: [ 
+		0 to: ieme do:[  :x | iemeNode:= iemeNode next ].
+		tmpNode:= iemeNode next. 
+		iemeNode next: newNode.
+		newNode next: tmpNode. 
+		size:= size +1. 
+		^ newNode.
+	] ifFalse: [ IndexOutOfBoundsException  signal: IndexOutOfBoundsException message  argument: anInteger ] 
 ]
 
 { #category : #testing }
