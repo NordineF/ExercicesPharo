@@ -15,7 +15,7 @@ BaselineOfExercicesPharo >> baselineOf: [
                             package: 'GenerateDoc-Tests'
                                     with: [ spec requires: #('GenerateDoc')];
                             package: 'LinkedListExercice'
-                                    with: [spec requires: #('LinkedListExerice')];
+                                    with: [spec requires: #('LinkedListExerice')].
                     ]
     	spec
 		        group: 'default' with: #('core' 'tests');
