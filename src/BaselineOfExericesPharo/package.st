@@ -1,1 +1,1 @@
-Package { #name: #BaselineOfExericesPharo}
+Package { #name: #BaselineOfExercicesPharo}
